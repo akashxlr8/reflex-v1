@@ -12,73 +12,29 @@ import reflex as rx
 #         padding = "10px",
 #     )
 
-def navbar_link(text: str, url: str) -> rx.Component:
-    return rx.link(
-        rx.text(text, size="4", weight="medium"), href=url
-    )
 
 def navbar() -> rx.Component:
-    return rx.box(
-        rx.desktop_only(
-            rx.hstack(
-                rx.hstack(
-                    rx.image(
-                        src="../../assets/logo.jpg",
-                        width="2.25em",
-                        height="auto",
-                        border_radius="25%",
-                    ),
-                    rx.heading(
-                        "Reflex", size="7", weight="bold"
-                    ),
-                    align_items="center",
-                ),
-                rx.hstack(
-                    navbar_link("Home", "/#"),
-                    navbar_link("About", "/#"),
-                    navbar_link("Pricing", "/#"),
-                    navbar_link("Contact", "/#"),
-                    justify="end",
-                    spacing="5",
-                ),
-                justify="between",
-                align_items="center",
-            ),
+    return rx.flex(
+        rx.badge(
+            rx.icon(tag="table-2", size=28),
+            rx.heading("Customer Data App", size="6"),
+            color_scheme="green",
+            radius="large",
+            align="center",
+            variant="surface",
+            padding="0.65rem",
         ),
-        rx.mobile_and_tablet(
-            rx.hstack(
-                rx.hstack(
-                    rx.image(
-                        src="/logo.jpg",
-                        width="2em",
-                        height="auto",
-                        border_radius="25%",
-                    ),
-                    rx.heading(
-                        "Reflex", size="6", weight="bold"
-                    ),
-                    align_items="center",
-                ),
-                rx.menu.root(
-                    rx.menu.trigger(
-                        rx.icon("menu", size=30)
-                    ),
-                    rx.menu.content(
-                        rx.menu.item("Home"),
-                        rx.menu.item("About"),
-                        rx.menu.item("Pricing"),
-                        rx.menu.item("Contact"),
-                    ),
-                    justify="end",
-                ),
-                justify="between",
-                align_items="center",
-            ),
+        rx.spacer(),
+        rx.hstack(
+            rx.logo(),
+            rx.color_mode.button(),
+            align="center",
+            spacing="3",
         ),
-        bg=rx.color("accent", 3),
-        padding="1em",
-        # position="fixed",
-        # top="0px",
-        # z_index="5",
+        spacing="2",
+        flex_direction=["column", "column", "row"],
+        align="center",
         width="100%",
+        top="0px",
+        padding_top="2em",
     )
