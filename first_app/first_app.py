@@ -16,10 +16,18 @@ def index() -> rx.Component:
         header(),
         rx.box(
             add_collection(),
-        ),  
+            width="100%",
+        ),
+        width="100%",
+        spacing="6",
+        padding_x=["1.5em", "1.5em", "3em"],
     )
 
-app = rx.App()
+app = rx.App(
+    theme=rx.theme(
+        appearance="dark", has_background=True, radius="large", accent_color="grass"
+    ),
+)
 app.add_page(index)
 app.add_page(navbar)
 app._compile() # Compile the app 
