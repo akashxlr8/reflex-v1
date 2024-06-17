@@ -15,7 +15,6 @@ def add_collection() -> rx.Component:
             rx.hstack(
                 rx.badge(
                     rx.icon(tag="folder", size=34),
-                    color_scheme="grass",
                     radius="full",
                     padding="0.65rem",
                 ),

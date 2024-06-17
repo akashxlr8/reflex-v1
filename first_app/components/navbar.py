@@ -18,7 +18,6 @@ def navbar() -> rx.Component:
         rx.badge(
             rx.icon(tag="table-2", size=28),
             rx.heading("Customer Data App", size="6"),
-            color_scheme="green",
             radius="large",
             align="center",
             variant="surface",
