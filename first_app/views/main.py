@@ -48,6 +48,15 @@ def add_collection() -> rx.Component:
                             "folder",
                             
                         ),
+                        form_field(
+                            "Workspace ID",
+                            "Workspace ID",
+                            "number",
+                            "workspace_id",
+                            "folder-tree",
+                        ),
+                        direction="column",
+                        spacing="3",
                     ),
                     rx.flex(
                         rx.dialog.close(
